@@ -98,14 +98,7 @@ const loginSubmit = async (): Promise<UserData | false> => {
       Cookies.set('small-cookie', data.cookie)
     }
 
-    console.log(Cookies.get('small-cookie'),'123')
 
-    if (data.data?.Body?.UserLoginResponse?.UserLoginResult?.登录) {
-      localStorage.setItem(
-        'info-user',
-        JSON.stringify(data.data.Body.UserLoginResponse.UserLoginResult.登录)
-      )
-    }
 
     showToast('登录成功')
     router.push({ path: '/'})
